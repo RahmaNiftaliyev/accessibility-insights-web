@@ -11,7 +11,7 @@ on:
 
 env:
   # Keep this in sync with /pipeline/install-node-prerequisites.yaml
-  NODE_VERSION: 16.14.2
+  NODE_VERSION: 20.17.0
 
 jobs:
   build:
@@ -133,7 +133,7 @@ jobs:
     name: e2e-web-tests (${{ matrix.shard-index }}/${{ strategy.job-total }})
     runs-on: ubuntu-20.04
     # We need to update this each time we update playwright
-    container: mcr.microsoft.com/playwright:v1.46.1-focal
+    container: mcr.microsoft.com/playwright:v1.48.2-focal
     strategy:
       fail-fast: false
       matrix:
